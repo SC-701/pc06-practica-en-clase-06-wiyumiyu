@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Abstracciones\Abstracciones.csproj" />
-    <ProjectReference Include="..\BD\BD.sqlproj" />
   </ItemGroup>
 
 </Project>
