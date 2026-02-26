@@ -64,7 +64,7 @@ jobs:
 
       - name: Build with dotnet (excluding BD project)
         run: |
-          cd "Semana 09-Documentos/Vehiculo.API"
+          cd "Vehiculo.API"
           dotnet build "Abstracciones/Abstracciones.csproj" --configuration Release --no-restore
           dotnet build "DA/DA.csproj" --configuration Release --no-restore
           dotnet build "Flujo/Flujo.csproj" --configuration Release --no-restore
