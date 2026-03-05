@@ -19,6 +19,7 @@ namespace API.Controllers
             _vehiculoFlujo = vehiculoFlujo;
             _logger = logger;
         }
+        #region Operaciones
 
         [HttpPost]
         public async Task<IActionResult> Agregar(VehiculoRequest vehiculo)
@@ -27,16 +28,23 @@ namespace API.Controllers
             return CreatedAtAction(nameof(Obtener), new { Id = resultado }, null);
         }
 
-        [HttpPut ("{Id}")]
+        [HttpPut("{Id}")]
         public async Task<IActionResult> Editar(Guid Id, VehiculoRequest vehiculo)
         {
+            if (!await VerificarVehiculoExiste(Id))
+                return NotFound("El vehículo no existe");
+
             var resultado = await _vehiculoFlujo.Editar(Id, vehiculo);
             return Ok(resultado);
         }
 
+
+
         [HttpDelete("{Id}")]
         public async Task<IActionResult> Eliminar(Guid Id)
         {
+            if (!await VerificarVehiculoExiste(Id))
+                return NotFound("El vehículo no existe");
             var resultado = await _vehiculoFlujo.Eliminar(Id);
             return NoContent();
         }
@@ -57,5 +65,22 @@ namespace API.Controllers
             var resultado = await _vehiculoFlujo.Obtener(Id);
             return Ok(resultado);
         }
+        #endregion
+
+        #region Helpers
+
+        private async Task<bool> VerificarVehiculoExiste(Guid Id)
+        {
+            var resultadoValidacion = false;
+            var resultadoVehiculoExiste = await _vehiculoFlujo.Obtener(Id);
+
+            if (resultadoVehiculoExiste != null)
+                resultadoValidacion = true;
+
+            return resultadoValidacion;
+        }
+
+        #endregion
+
     }
 }
