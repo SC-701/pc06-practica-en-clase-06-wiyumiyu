@@ -3,15 +3,14 @@ using Reglas;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
-
+builder.Services.AddRazorPages();
 builder.Services.AddScoped<IConfiguracion, Configuracion>();
 
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
 
@@ -22,8 +21,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Vehiculos}/{action=Index}/{id?}");
+app.MapRazorPages();
 
 app.Run();
