@@ -22,4 +22,9 @@ namespace Abstracciones.Modelos
         [Required]
         public Guid Id { get; set; }
     }
+    public class LoginRequest : LoginBase
+    {
+        [Required]
+        public string Password { get; set; }
+    }
 }

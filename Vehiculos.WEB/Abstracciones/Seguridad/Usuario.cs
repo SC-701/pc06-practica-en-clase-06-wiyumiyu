@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abstracciones.Modelos
+namespace Abstracciones.Seguridad
 {
     public class UsuarioBase
     {
@@ -18,7 +18,8 @@ namespace Abstracciones.Modelos
         [EmailAddress]
         public string CorreoElectronico { get; set; }
     }
-    public class Usuario:UsuarioBase {
+    public class Usuario : UsuarioBase
+    {
         [Required]
         public string Password { get; set; }
 

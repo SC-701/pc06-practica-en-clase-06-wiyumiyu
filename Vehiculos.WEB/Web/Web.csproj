@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,6 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />
+	  <PackageReference Include="Autorizacion.Abstracciones.wiyumiyu" Version="1.0.0" />
+	  <PackageReference Include="Autorizacion.DA.wiyumiyu" Version="1.0.0" />
+	  <PackageReference Include="Autorizacion.Flujo.wiyumiyu" Version="1.0.0" />
+	  <PackageReference Include="Autorizacion.Middleware.wiyumiyu" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
