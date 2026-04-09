@@ -9,7 +9,7 @@ namespace Abstracciones.Modelos
 {
     public class UsuarioBase
     {
-
+        public int Id { get; set; }
         [Required]
         public string NombreUsuario { get; set; }
         [Required]
@@ -17,6 +17,7 @@ namespace Abstracciones.Modelos
         [Required]
         [EmailAddress]
         public string CorreoElectronico { get; set; }
+
     }
     public class Usuario:UsuarioBase {
         [Required]

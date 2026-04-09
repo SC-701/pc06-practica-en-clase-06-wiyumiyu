@@ -1,10 +1,8 @@
 using Abstracciones.Interfaces.Reglas;
-using Abstracciones.Modelos;
-using Abstracciones.Modelos.Seguridad;
 using Abstracciones.Seguridad;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity.Data;
+using Abstracciones.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Reglas;
